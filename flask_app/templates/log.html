@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon</title>
-</head>
-<body>
-    <div>
-        <h1>Login</h1>
-    </div>
-    <form action="/login" method="POST">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Salon</title>
+    </head>
+    <body>
         <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" placeholder="Email" id="email">
+            <h1>Login</h1>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password" id="password">
-        </div>
-        <div>
-            <button type="submit" value=>Login</button>
-        </div>
-    </form>
-    <a href="/register"><button>New?</button></a>
-</body>
+        <form action="/login" method="POST">
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email" placeholder="Email" id="email">
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Password" id="password">
+            </div>
+            <div>
+                <button type="submit" value=>Login</button>
+            </div>
+        </form>
+        <a href="/register"><button>New?</button></a>
+    </body>
+</html>
