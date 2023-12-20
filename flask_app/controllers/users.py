@@ -37,3 +37,7 @@ def register():
     id = user.User.new_user(data)
     session['user_id'] = id
     return redirect('/dashboard')
+
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
