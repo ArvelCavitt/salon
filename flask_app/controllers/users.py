@@ -21,5 +21,19 @@ def login():
     return redirect('/dashboard')
 
 @app.route('/register')
-def register():
+def reg():
     return render_template('register.html')
+
+@app.route('/register', methods = ['POST'])
+def register():
+    if not user.User.validate_register(request.form):
+        return redirect('/register')
+    data = {
+        "first_name": request.form['first_name'],
+        "last_name": request.form['last_name'],
+        "email": request.form['email'],
+        "password": bcrypt.generate_password_hash(request.form['password'])
+    }
+    id = user.User.new_user(data)
+    session['user_id'] = id
+    return redirect('/dashboard')
