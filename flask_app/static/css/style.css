@@ -11,6 +11,16 @@ h1,h3 {
     text-align: center;
 }
 
+.logout {
+    text-align: end;
+    text-decoration: none;
+}
+
+.logout a {
+    text-decoration: none;
+    margin: 15px;
+}
+
 .navbar ul {
     list-style-type: none;
     background-color: rgb(125, 177, 249);
