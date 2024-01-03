@@ -37,9 +37,10 @@ class User:
     def get_email(cls,data):
         query = "SELECT * FROM user WHERE email = %(email)s;"
         results = connectToMySQL(cls.db).query_db(query, data)
-        if len(results) < 1:
+        if results == ():
             return False
-        return cls(results[0])
+        else:
+            return results[0]
     
     @staticmethod
     def validate_register(user):
@@ -69,7 +70,7 @@ class User:
     @staticmethod
     def validate_login(user_exist, user_login_data):
         is_Valid = True
-        if not user_exists:
+        if not user_exist:
             flash("Invalid login credentials","login")
             is_Valid = False
         elif not bcrypt.check_password_hash(user_exist['password'], user_login_data['password']):

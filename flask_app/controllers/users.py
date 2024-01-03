@@ -18,18 +18,30 @@ def logout():
     session.clear()
     return redirect('/')
 
-
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login' , methods=['POST'])
 def login():
-    user = User.get_email(request.form)
-    if not user:
-        flash("Invalid email", "login")
+    user_login_data = {
+        "email": request.form['email'],
+        "password": request.form['password'],
+    }
+    user_exists = user.User.get_email(user_login_data)
+    if not user.User.validate_login(user_exists, user_login_data):
         return redirect('/')
-    if bcrypt.check_password_hash(user.password, request.form['password']):
-        flash("Invalid password", "login")
-        return redirect('/')
-    session['user_id'] = user.id
+    session['id'] = user_exists['first_name']
+    session['first_name'] = user_exists['first_name']
     return redirect('/dashboard')
+
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     user = User.get_email(request.form)
+#     if not user:
+#         flash("Invalid email", "login")
+#         return redirect('/')
+#     if bcrypt.check_password_hash(user.password, request.form['password']):
+#         flash("Invalid password", "login")
+#         return redirect('/')
+#     session['user_id'] = user.id
+#     return redirect('/dashboard')
 
 @app.route('/register')
 def reg():
