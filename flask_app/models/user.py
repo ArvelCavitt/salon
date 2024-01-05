@@ -14,6 +14,7 @@ class User:
         self.id = data['id']
         self.first_name = data['first_name']
         self.last_name = data['last_name']
+        self.phone = data['phone']
         self.email = data['email']
         self.password = data['password']
         self.created_at = data['created_at']
@@ -21,7 +22,7 @@ class User:
         
     @classmethod
     def new_user(cls,data):
-        query = "INSERT INTO user (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);"
+        query = "INSERT INTO user (first_name, last_name, phone, email, password) VALUES (%(first_name)s, %(last_name)s, %(phone)s, %(email)s, %(password)s);"
         return connectToMySQL(cls.db).query_db(query, data)
     
     @classmethod
@@ -58,6 +59,9 @@ class User:
             is_Valid = False
         if len(user['last_name']) < 3:
             flash("Last name must contain at least three characters","register")
+            is_Valid = False
+        if len(user['phone']) < 10:
+            flash("You must enter a Valid phone number","register")
             is_Valid = False
         if len(user['password']) < 8:
             flash("Password must contain at least eight characters","register")

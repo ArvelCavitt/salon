@@ -54,6 +54,7 @@ def register():
     data = {
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
+        "phone": request.form['phone'],
         "email": request.form['email'],
         "password": bcrypt.generate_password_hash(request.form['password'])
     }

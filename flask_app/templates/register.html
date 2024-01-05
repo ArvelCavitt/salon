@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename=('/css/reg.css')) }}">
         <title>Document</title>
     </head>
@@ -18,27 +19,41 @@
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
-                <div class="">
-                    <div class="input-feild">
+                <div class="input-box">
+                    <div class="input-field">
                         <label for="first_name" class="label-col"></label>
                         <input type="text" name="first_name" id="first_name" placeholder="First Name">
+                        <i class='bx bxs-user' ></i>
                     </div>
-                    <div class="input-feild">
+                    <div class="input-field">
                         <label for="last_name" class="label-col"></label>
                         <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+                        <i class='bx bxs-user' ></i>
                     </div>
                 </div>
-                <div class="input-feild">
-                    <label for="email" class="label-col"></label>
-                    <input type="text" name="email" id="email" placeholder="Email">
+                <div class="input-box">
+                    <div class="input-field">
+                        <label for="email" class="label-col"></label>
+                        <input type="text" name="email" id="email" placeholder="Email">
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input-field">
+                        <label for="phone" class="label-col"></label>
+                        <input type="number" name="phone" id="phone" placeholder="Phone Number">
+                        <i class='bx bxs-phone' ></i>
+                    </div>
                 </div>
-                <div class="input-feild">
-                    <label for="password" class="label-col"></label>
-                    <input type="password" name="password" id="password" placeholder="Password">
-                </div>
-                <div class="input-feild">
-                    <label for="confirm_password" class="label-col"></label>
-                    <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-Password">
+                <div class="input-box">
+                    <div class="input-field">
+                        <label for="password" class="label-col"></label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        <i class='bx bxs-lock-alt bx-tada' ></i>
+                    </div>
+                    <div class="input-field">
+                        <label for="confirm_password" class="label-col"></label>
+                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-Password">
+                        <i class='bx bxs-lock-alt bx-tada' ></i>
+                    </div>
                 </div>
                 <input type="submit" value="Submit" class="btn">
             </form>
