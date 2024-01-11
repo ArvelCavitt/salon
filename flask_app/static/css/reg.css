@@ -10,13 +10,19 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(50, 50, 50);
+    background: url('/static/img/login_hair.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .wrapper {
-    background-color: rgb(64, 0, 124);
-    width: 750px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
+    width: 750px;
+    border-radius: 15px;
     color: beige;
     padding: 40px 35px 55px;
 }
@@ -64,10 +70,21 @@ body {
     font-size: 20px;
 }
 
-.wrapper label p{
+.wrapper label{
+    
+    font-size: 14.5px;
     accent-color: #fff;
-    margin-right: 5px;
+    margin: 5px;
+    text-decoration: none;
+    text-align: end;
 }
+
+/* .wrapper label p .button a{
+    accent-color: #fff;
+    outline: none;
+    border: none;
+    text-decoration: none;
+} */
 
 .wrapper .btn {
     width: 100%;
