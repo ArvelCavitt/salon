@@ -27,6 +27,7 @@ h1,h3 {
     padding: 0px;
     margin: 0;
     overflow: hidden;
+    position: relative;
 }
 
 .navbar a {
@@ -44,4 +45,21 @@ h1,h3 {
 
 .navbar li {
     float: right;
+    position: relative;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 4px;
+    width: 0%;
+    background: #11d7c3;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover:after{
+    width: 100%;
+    background: #74f9ec;
 }
