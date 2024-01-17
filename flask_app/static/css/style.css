@@ -1,5 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body{
-    margin: 0px;
+    background: url('/static/img/suite.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 main {
@@ -23,7 +32,7 @@ h1,h3 {
 
 .navbar ul {
     list-style-type: none;
-    background-color: rgb(125, 177, 249);
+    background-color: rgba(125, 177, 249, 0.2);
     padding: 0px;
     margin: 0;
     overflow: hidden;
@@ -40,7 +49,7 @@ h1,h3 {
 
 .navbar a:hover {
     background-color: rgb(78, 198, 241);
-    font-style: italic;
+    font-style: none;
 }
 
 .navbar li {
