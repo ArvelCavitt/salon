@@ -5,10 +5,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename=('/css/style.css')) }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@1,100&display=swap" rel="stylesheet">
         <title>Document</title>
     </head>
     <body>
-        <div>
+        <!-- <div>
             <div class="logout">
                 <a href="/logout">logout</a>
             </div>
@@ -28,8 +31,52 @@
                 <h3>Welcome to our Home Page</h3>
                 <p><i>The word salon is French, originally meaning "reception room." In 1800's France, the meaning grew to include a "gathering of elegant people" occurring regularly in such a room. Definitions of salon. elegant sitting room where guests are received.</i></p>
             </main>
+        </div> -->
+        <!-- starting over for design purposes -->
+        <div id="banner">
+            <img src="static/img/logo-transparent-png.png" class="logo">
+            <div class="banner-text">
+                <h1>Hair Studio</h1>
+                <p>results built with trust</p>
+                <div class="banner-btn">
+                    <a href="#"><span></span>Find Out</a>
+                    <a href="#"><span></span>Read More</a>
+                </div>
+            </div>
         </div>
-        <!-- flask_app/static/css/style.css -->
-        
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Booking</a></li>
+                    <li><a href="#">About Me</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="menuBtn">
+            <img src="static/img/menu-regular-24.png" id="menu">
+        </div>
+        <!-- script for menu button -->
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+
+            sideNav.style.right = "-250px";
+
+            menuBtn.onclick = function(){
+                if(sideNav.style.right == "-250px"){
+                    sideNav.style.right = "0";
+                    menu.src = "static/img/window-close-regular-24.png"
+                }
+                else{
+                    sideNav.style.right = "-250px";
+                    menu.src = "static/img/menu-regular-24.png"
+                }
+            }
+        </script>
+
     </body>
 </html>
