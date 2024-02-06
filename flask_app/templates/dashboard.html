@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@1,100&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
         <title>Document</title>
     </head>
     <body>
@@ -40,19 +41,20 @@
                 <h1>Hair Studio</h1>
                 <p>results built with trust</p>
                 <div class="banner-btn">
-                    <a href="#"><span></span>Find Out</a>
-                    <a href="#"><span></span>Read More</a>
+                    <!-- Filler till code ready -->
+                    <a href="#"><span></span>Book Now</a>
+                    <a href="#"><span></span>Products</a>
                 </div>
             </div>
         </div>
         <div id="sideNav">
             <nav>
                 <ul>
-                    <li><a href="/dashboard">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Booking</a></li>
-                    <li><a href="#">About Me</a></li>
+                    <li><a href="#banner">Top Page</a></li>
+                    <li><a href="#features">Feature</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#footer">Meet Me</a></li>
                 </ul>
             </nav>
         </div>
@@ -229,6 +231,11 @@
                     menu.src = "static/img/menu-regular-24.png"
                 }
             }
+
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                speed: 1000,
+                speedAsDuration: true
+            });
         </script>
 
     </body>
