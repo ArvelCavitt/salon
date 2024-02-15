@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename=('/css/booking.css')) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@1,100&display=swap" rel="stylesheet">
+    <title>Alyysa Simpelo's Hair Studio</title>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="top">
+            <h1 class="form-title">Book With Me</h1>
+            <h3>Please fill out the form below</h3>
+        </div>
+        <form action="/book_with_me" method="POST"> -->
+            <!-- {% with messages = get_flashed_messages() %}     declare a variable called messages -->
+                <!-- {% if messages %}                            check if there are any messages -->
+                    <!-- {% for message in messages %}            loop through the messages -->
+                        <!-- <p class="error">{{message}}</p>                   display each message in a paragraph tag -->
+                    <!-- {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="cut">Hair Cut:</label>
+                <input type="text" name="cut" class="form-control" id="cut">
+            </div>
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="text" name="color" class="form-control" id="color">
+            </div>
+            <div class="form-group">
+                <label for="description">Hair description:</label>
+                <textarea name="description" id="description" cols="30" rows="1"></textarea>
+            </div>
+            <input type="submit" name="Add" id="offset-btn">
+            <a href="/dashboard">Back</a>
+        </form>
+    </div> -->
+    <!-- starting a new -->
+
+    <div class="main-bg">
+        <div class="form">
+            <div class="form-text">
+                <h1>Book With Me</h1>
+                <p>PLEASE FILL OUT FORM BELOW TO BOOK</p>
+            </div>
+            <div class="main-form">
+                <form action="" method="post">
+                    <div>
+                        <span>Are you looking for a Haircut?</span>
+                        <input type="text" name="cut" id="cut">
+                    </div>
+                    <div>
+                        <span>Looking for some Color?</span>
+                        <input type="text" name="color" id="color">
+                    </div>
+                    <div>
+                        <span>Please describe the results your looking for.</span>
+                        <input type="text" name="description" id="description">
+                    </div>
+                    <div>
+                        <span>Desired date</span>
+                        <!-- THIS WILL CHANGE SO DATABASE WILL TAKE DATES -->
+                        <input type="number" name="date" id="date" placeholder="MM/DD/YYYY">
+                        <!-- UPDATING SOON -->
+                    </div>
+                    <div id="submit">
+                        <input type="submit" value="SUBMIT" name="name" id="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
