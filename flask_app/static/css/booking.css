@@ -65,6 +65,8 @@
 
 .main-form div input{
     width: 100%;
+    background: none;
+    border: 1px solid #07b79f;
 }
 
 #submit{

@@ -49,7 +49,14 @@
                 <p>PLEASE FILL OUT FORM BELOW TO BOOK</p>
             </div>
             <div class="main-form">
-                <form action="" method="post">
+                <form action="/book_with_me" method="POST">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p class="error">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
                     <div>
                         <span>Are you looking for a Haircut?</span>
                         <input type="text" name="cut" id="cut">
@@ -65,7 +72,7 @@
                     <div>
                         <span>Desired date</span>
                         <!-- THIS WILL CHANGE SO DATABASE WILL TAKE DATES -->
-                        <input type="number" name="date" id="date" placeholder="MM/DD/YYYY">
+                        <input type="date" name="date" id="date" placeholder="MM/DD/YYYY">
                         <!-- UPDATING SOON -->
                     </div>
                     <div id="submit">
