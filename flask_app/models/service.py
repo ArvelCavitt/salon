@@ -42,22 +42,22 @@ class Service:
             return []
         else:
             service = []
-            for row in results
-            service_obj = cls(row)
-            user_dictionary = {
-                "id": row['user_id'],
-                "first_name": row['first_name'],
-                "last_name": row['last_name'],
-                "phone": row['phone'],
-                "email": row['email'],
-                "created_at": row['user.created_at'],
-                "updated_at": row['user.updated_at']
-            }
-            user_obj = user.User(user_dictionary)
-            service_obj.user = user_obj
-            service.append(service_obj)
-        print("service", service)
-        return service
+            for row in results:
+                service_obj = cls(row)
+                user_dictionary = {
+                    "id": row['user_id'],
+                    "first_name": row['first_name'],
+                    "last_name": row['last_name'],
+                    "phone": row['phone'],
+                    "email": row['email'],
+                    "created_at": row['user.created_at'],
+                    "updated_at": row['user.updated_at']
+                }
+                user_obj = user.User(user_dictionary)
+                service_obj.user = user_obj
+                service.append(service_obj)
+            print("service", service)
+            return service
     
     @classmethod
     def get_one_service(cls,data):
