@@ -65,7 +65,8 @@ class Service:
     
     @classmethod
     def create_new_service(cls,data):
-        pass
+        query = "INSERT INTO service (cut, color, description, date, user_id) VALUES (%(cut)s , %(color)s, %(description)s, %(date)s, %(user_id)s;"
+        return connectToMySQL(cls.db).query_db(query,data)
     
     @classmethod
     def edit_existing_service(cls,data):
