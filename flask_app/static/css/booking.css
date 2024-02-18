@@ -38,8 +38,10 @@
 } */
 
 .main-bg{
-    background-image: url('/static/img/logo-transparent.png.png');
-    max-width: 1200px;
+    background-image: url('/static/img/background_img.jpg');
+    background-size: cover;
+    background-position: center;
+    /* max-width: 1200px; */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -49,23 +51,24 @@
 .form{
     width: 700px;
     height: 700px;
-    background-color: #009683;
+    background-color: #7cddd0;
+    border: solid #00ffff 2px;
 }
 
 .form-text{
     text-align: center;
-    margin: 40px 0;
+    margin: 90px 0;
 }
 
 .main-form div{
-    margin: 10px 20px;
+    margin: 25px 20px;
     width: 300px;
     display: inline-block;
 }
 
 .main-form div input{
     width: 100%;
-    background: none;
+    background: #ffff;
     border: 1px solid #07b79f;
 }
 

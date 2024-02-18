@@ -35,7 +35,29 @@ class Service:
 
     @classmethod
     def get_all_services(cls):
-        pass
+        query = "SELECT * FROM service JOIN user ON service.user_id = user.id;"
+        results = connectToMySQL(cls.db).query_db(query)
+        print("results", results)
+        if len(results) == 0:
+            return []
+        else:
+            service = []
+            for row in results
+            service_obj = cls(row)
+            user_dictionary = {
+                "id": row['user_id'],
+                "first_name": row['first_name'],
+                "last_name": row['last_name'],
+                "phone": row['phone'],
+                "email": row['email'],
+                "created_at": row['user.created_at'],
+                "updated_at": row['user.updated_at']
+            }
+            user_obj = user.User(user_dictionary)
+            service_obj.user = user_obj
+            service.append(service_obj)
+        print("service", service)
+        return service
     
     @classmethod
     def get_one_service(cls,data):
