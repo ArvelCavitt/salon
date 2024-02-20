@@ -4,7 +4,13 @@ from flask_app.models import user, service
 
 @app.route('/book_with_me')
 def book():
-    return render_template("booking.html")
+    if "user_id" not in session:
+        return redirect("/")
+    data = {
+        'id': session["user_id"]
+    }
+    print("session", session)
+    return render_template("booking.html", user=user.User.get_id(data), service=service.Service.get_all_services())
 
 @app.route("/book_with_me", methods=['POST'])
 def create_booking():
@@ -12,13 +18,13 @@ def create_booking():
     if not service.Service.is_valid(booking_appointment):
         return redirect("/book_with_me")
     if "user_id" not in session:
-        return redirect("/book_with_me")
+        return redirect("/")
     data = {
         "cut": request.form["cut"],
         "color": request.form["color"],
         "description": request.form["description"],
         "date": request.form["date"],
-        "user_id": request.form["user_id"]
+        "user_id": session["user_id"]
     }
     service.Service.create_new_service(data)
     return redirect("/confirmation")
