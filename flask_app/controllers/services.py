@@ -5,7 +5,7 @@ from flask_app.models import user, service
 @app.route('/book_with_me')
 def book():
     if "user_id" not in session:
-        return redirect("/")
+        return redirect("/dashboard")
     data = {
         'id': session["user_id"]
     }
