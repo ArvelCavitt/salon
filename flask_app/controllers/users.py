@@ -2,6 +2,7 @@ from flask_app import app
 from flask import render_template, request, redirect, session, flash
 from flask_app.models import user
 from flask_app.models.user import User
+from flask_app.models import service
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
@@ -11,7 +12,14 @@ def log():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        'id': session['user_id']
+    }
+    print("session", session)
+    return render_template('dashboard.html', user = user.User.get_id(data), all_services = service.Service.get_all_services()) #changing all_services & get_all_services to take in only logged in users services later.#
+
 
 @app.route('/logout')
 def logout():
