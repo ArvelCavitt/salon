@@ -62,7 +62,26 @@ class Service:
     
     @classmethod
     def get_one_service(cls,data):
-        pass
+        query = "SELECT * FROM service JOIN user ON service.user_id = user.id WHERE service.id = %(id)s;"
+        results = connectToMySQL(cls.db).query_db(query,data)
+        print(results)
+        if len(results) == 0:
+            return None
+        else:
+            service_dictionary = results[0]
+            service_obj = cls(service_dictionary)
+            user_dictionary = {
+                "id": service_dictionary['user.id'],
+                "first_name": service_dictionary['first_name'],
+                "last_name": service_dictionary['last_name'],
+                "phone": service_dictionary['phone'],
+                "email": service_dictionary['email'],
+                "created_at": service_dictionary['created_at'],
+                "updated_at": service_dictionary["updated_at"]
+            }
+            user_obj = user.User(user_dictionary)
+            service_obj.user = user_obj
+            return service_obj
     
     @classmethod
     def create_new_service(cls,data):

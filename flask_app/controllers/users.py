@@ -12,13 +12,13 @@ def log():
 
 @app.route('/dashboard')
 def dashboard():
-    if 'user_id' not in session:
-        return redirect('/')
+    if 'id' not in session:
+        return redirect('/logout')
     data = {
-        'id': session['user_id']
+        'id': session['id']
     }
     print("session", session)
-    return render_template('dashboard.html', user = user.User.get_id(data), all_services = service.Service.get_all_services()) #changing all_services & get_all_services to take in only logged in users services later.#
+    return render_template('dashboard.html', user = user.User.get_id(data)) #changing all_services & get_all_services to take in only logged in users services later.#
 
 
 @app.route('/logout')

@@ -26,13 +26,27 @@ class User:
         return connectToMySQL(cls.db).query_db(query, data)
     
     @classmethod
+    def get_all(cls):
+        query = "SELECT * FROM user;"
+        results = connectToMySQL(cls.db).query_db(query)
+        print(results)
+        users = []
+        for row in results:
+            users.append(cls(row))
+        print(users)
+        return users
+    
+    @classmethod
     def get_id(cls,data):
+        data = {
+            "id":id
+        }
         query = "SELECT * FROM user WHERE id = %(id)s;"
         results = connectToMySQL(cls.db).query_db(query, data)
         if results == ():
             return False
         else:
-            return results[0]
+            return cls(results[0])
 
     @classmethod
     def get_email(cls,data):

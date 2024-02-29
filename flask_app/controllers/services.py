@@ -2,10 +2,11 @@ from flask_app import app
 from flask import render_template, redirect, request, session
 from flask_app.models import user, service
 
-@app.route('/book_with_me')
+
+@app.route("/book_with_me")
 def book():
     if "user_id" not in session:
-        return redirect("/dashboard")
+        return redirect('/dashboard')
     data = {
         'id': session["user_id"]
     }
@@ -18,7 +19,7 @@ def create_booking():
     if not service.Service.is_valid(booking_appointment):
         return redirect("/book_with_me")
     if "user_id" not in session:
-        return redirect("/")
+        return redirect("/dashboard")
     data = {
         "cut": request.form["cut"],
         "color": request.form["color"],
